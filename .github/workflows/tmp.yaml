@@ -43,6 +43,11 @@ jobs:
         kubernetes-version: ${{ env.k8s_version }}
         driver: docker
         start: true
+    - name: Verify env
+      run: |
+        kind version
+        kubectl version
+        go version
     - name: Install Carvel Tools
       uses: carvel-dev/setup-action@v2
       with:
