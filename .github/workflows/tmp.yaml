@@ -66,8 +66,9 @@ jobs:
 
         ./hack/verify-no-dirty-files.sh
 
-        # minikube start --driver=docker
-        # eval $(minikube docker-env --shell=bash)
+        minikube start --driver=docker
+        eval $(minikube docker-env --shell=bash)
+        kubectl version
 
         export SECRETGEN_E2E_NAMESPACE=secretgen-test
 
